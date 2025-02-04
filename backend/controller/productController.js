@@ -101,7 +101,7 @@ const getProductReviews = catchAsyncErrors(async (req, res, next) => {
   if (!product) {
     return next(new ErrorHandler("Producr not found"));
   }
-  const reviews = res.status(200).json({
+  res.status(200).json({
     success: true,
     reviews: product.reviews,
   });
